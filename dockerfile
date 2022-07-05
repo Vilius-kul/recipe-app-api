@@ -1,4 +1,4 @@
-FROM alpine:3.16
+FROM python:3.10-alpine3.15
 LABEL maintener="vilius.kulinas@gmail.com"
 
 ENV PYTHONUNBUFFERED 1
@@ -10,7 +10,7 @@ EXPOSE 8000
 
 RUN python -m venv /py && \
     /py/bin/pip install --upgrade pip && \
-    py/bin/pip install -r /tmp/requirements.txt && \
+    /py/bin/pip install -r /tmp/requirements.txt && \
     rm -rf /tmp && \
     adduser \
         --disabled-password \
