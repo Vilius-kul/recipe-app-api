@@ -1,4 +1,4 @@
-FROM python:3.10-alpine3.15
+FROM python:3.9-alpine3.13
 LABEL maintener="vilius.kulinas@gmail.com"
 
 ENV PYTHONUNBUFFERED 1
@@ -24,7 +24,7 @@ RUN python -m venv /py && \
     adduser \
         --disabled-password \
         --no-create-home \
-    django-user
+        django-user
 
 ENV PATH="/py/bin:$PATH"
 
